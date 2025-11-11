@@ -10,6 +10,8 @@ def define_bee():
     pink = [1, 0.753, 0.796]
     brown = [0.74,0.65,0.42]
 
+    image_mat = np.ones((15, 15, 3)) * grey
+
     # specify which pixels are which colour
     image_mat[7:11, 2] = pink
     image_mat[6:12, 3:5] = pink
@@ -22,8 +24,7 @@ def define_bee():
     image_mat[3, 6:10] = brown
 
     return image_mat
-
-
+    
 def define_butterfly():
     import numpy as np
 
@@ -32,14 +33,13 @@ def define_butterfly():
 
     # define some colours
     black = [0, 0, 0]
-    other = [0.2, 0.4, 0.8]
-    other = [0.5, 0.4, 0.2]
+    blue = [0.2, 0.4, 0.8]
 
     # specify which pixels are which colour
     c = 8
     # centre of butterfly
     image_mat[2:13, c] = black
-
+    
     # generate mirror image at the same time
     for i in [-1, 1]:
         # outline
@@ -59,19 +59,20 @@ def define_butterfly():
         image_mat[13, [i*j+c for j in [4, 3]]] = black
         image_mat[12, i*2+c] = black
         image_mat[11, i*1+c] = black
-
+        
         # fill in the centre line by line
-        image_mat[3, [i*j+c for j in [4, 5]]] = other
-        image_mat[4, [i*j+c for j in range(2, 7)]] = other
-        image_mat[5:7, [i*j+c for j in range(1, 7)]] = other
-        image_mat[7, [i*j+c for j in range(2, 5)]] = other
-        image_mat[8, i*1+c] = other
-        image_mat[9, [i*j+c for j in range(1, 5)]] = other
-        image_mat[10, [i*j+c for j in range(1, 6)]] = other
-        image_mat[11, [i*j+c for j in range(2, 6)]] = other
-        image_mat[12, [i*j+c for j in range(3, 5)]] = other
-
+        image_mat[3, [i*j+c for j in [4, 5]]] = blue
+        image_mat[4, [i*j+c for j in range(2,7)]] = blue
+        image_mat[5:7, [i*j+c for j in range(1,7)]] = blue
+        image_mat[7, [i*j+c for j in range(2,5)]] = blue
+        image_mat[8, i*1+c] = blue
+        image_mat[9, [i*j+c for j in range(1,5)]] = blue
+        image_mat[10, [i*j+c for j in range(1,6)]] = blue
+        image_mat[11, [i*j+c for j in range(2,6)]] = blue
+        image_mat[12, [i*j+c for j in range(3,5)]] = blue
+    
     return image_mat
+
 
 
 def plot_image(image):
