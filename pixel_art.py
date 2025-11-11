@@ -21,21 +21,20 @@ def define_smile():
     image_mat[4:6, 5:11] = cyan
     image_mat[3, 6:10] = cyan
     pink = [1, 0.753, 0.796]
-    grey = [0.05] * 3
+    brown = [0.74,0.65,0.42]
 
     image_mat = np.ones((15, 15, 3)) * grey
 
     # specify which pixels are which colour
-    image_mat[3:12, 3:12] = yellow
-    image_mat[4:11, 2:13] = yellow
-    image_mat[5:10, 1:14] = yellow
-    
-    image_mat[5:7, 5:7] = black  
-    image_mat[5:7, 9:11] = black
-    
-    image_mat[9, 5:11] = black
-    image_mat[10, 6:10] = black
-    image_mat[11, 7:9] = black
+    image_mat[7:11, 2] = pink
+    image_mat[6:12, 3:5] = pink
+    image_mat[6:12, 5:7] = yellow
+    image_mat[6:12, 7:9] = black
+    image_mat[6:12, 9:11] = yellow
+    image_mat[6:12, 11:13] = pink
+    image_mat[7:11, 13] = pink
+    image_mat[4:6, 5:11] = brown
+    image_mat[3, 6:10] = brown
 
     return image_mat
     
