@@ -8,7 +8,11 @@ def define_smile():
     black = [0, 0, 0]
     yellow = [1.0, 0.85, 0]
     pink = [1, 0.753, 0.796]
+<<<<<<< HEAD
     grey = [0.076] * 3
+=======
+    grey = [0.05] * 3
+>>>>>>> 2cd76ea7bedc05ba330127f73b5cb2ac7b2c22ee
 
     image_mat = np.ones((15, 15, 3)) * grey
 
